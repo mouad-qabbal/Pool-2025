@@ -1,1 +1,1 @@
-ifconfig -a | grep -ioE '([a-z0-9]{1,2}:){5}..'
+ifconfig -a | grep -ioE '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'
