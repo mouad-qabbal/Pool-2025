@@ -13,8 +13,3 @@ void ft_print_alphabet(void)
         i++;
     }
 }
-
-int main ()
-{
-	ft_print_alphabet();
-}
