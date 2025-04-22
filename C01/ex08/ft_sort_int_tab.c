@@ -18,7 +18,7 @@ void ft_sort_int_tab(int *tab, int size)
         if(tab[i] > tab[i+1])
         {
             ft_swap(&tab[i], &tab[i+1]);
-            i = -1;
+            i = -1; // Reset to -1 because it will be incremented to 0
         }
         i++;
     }
