@@ -19,7 +19,7 @@ char *ft_strdup(char *src)
     int i;
 
     len = ft_strlen(src);
-    ptr = (char *)malloc( (len + 1) * sizeof(char));
+    ptr = (char *)malloc((len + 1) * sizeof(char));
     if (ptr == NULL)
         return (NULL);
 
@@ -59,7 +59,6 @@ int main(void)
     int size = 3;
 
     t_stock_str *result = ft_strs_to_tab(size, arr);
-
     if (!result)
     {
         printf("Error: ft_strs_to_tab returned NULL.\n");
