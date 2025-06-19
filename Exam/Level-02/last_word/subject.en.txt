@@ -1,0 +1,111 @@
+Assignment name  : last_word
+Expected files   : last_word.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string and displays its last word followed by a \n.
+
+A word is a section of string delimited by spaces/tabs or by the start/end of
+the string.
+
+If the number of parameters is not 1, or there are no words, display a newline.
+
+Example:
+
+$> ./last_word "FOR PONY" | cat -e
+PONY$
+$> ./last_word "this        ...       is sparta, then again, maybe    not" | cat -e
+not$
+$> ./last_word "   " | cat -e
+$
+$> ./last_word "a" "b" | cat -e
+$
+$> ./last_word "  lorem,ipsum  " | cat -e
+lorem,ipsum$
+$>
+
+
+/*
+
+Great! Let's break this down and build **the algorithm step by step** for solving the `last_word` exercise. We'll do it **logically** first without writing the code.
+
+---
+
+### 🔸 Step-by-Step Algorithm for `last_word`
+
+---
+
+### ✅ **Step 1: Handle invalid input**
+
+* Check if the number of arguments is **exactly 2** (i.e. the program name + one argument).
+
+  * If not: write a newline and exit.
+
+---
+
+### ✅ **Step 2: Access the input string**
+
+* The input string will be in `argv[1]`.
+* You need to find the **last word** from this string.
+
+---
+
+### ✅ **Step 3: Scan backwards to skip trailing spaces/tabs**
+
+* Start from the **end** of the string (`i = length - 1`).
+* Skip all **spaces (' ')** and **tabs ('\t')** at the end.
+
+  * While current character is `' '` or `'\t'`, move `i--`.
+
+---
+
+### ✅ **Step 4: Find the end index of the last word**
+
+* After skipping, now you're on the **last character of the last word**.
+* Save this position as `end`.
+
+---
+
+### ✅ **Step 5: Move backwards to find the start of the last word**
+
+* Keep moving `i--` until you find a space or tab.
+* The next character (i+1) is the **start** of the last word.
+* Save it as `start`.
+
+---
+
+### ✅ **Step 6: Output the last word**
+
+* Use a loop from `start` to `end`, and write each character one by one using `write`.
+
+---
+
+### ✅ **Step 7: Write a newline**
+
+* After printing the last word, write `'\n'`.
+
+---
+
+### 🧠 Edge Cases to Think About
+
+* Input string is all spaces → print newline.
+* Input contains one word → print it.
+* Input ends with multiple spaces → skip them.
+* Word may contain punctuation (e.g., `"lorem,ipsum"`), that’s fine — you don’t need to filter them.
+
+---
+
+### 📌 Summary of Key Concepts Used
+
+* Argument count check.
+* Backward scanning to skip whitespace.
+* Locating word boundaries.
+* Printing with `write`.
+
+---
+
+Let me know when you're ready to convert this into code or test edge cases together!
+
+
+*/
+
