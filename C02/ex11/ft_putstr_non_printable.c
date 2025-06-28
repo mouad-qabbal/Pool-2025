@@ -11,7 +11,7 @@
     --> Coucou\0atu vas bien ?
 */
 
-//#include <unistd.h>
+#include <unistd.h>
 
 void    ft_putchar(char c)
 {
